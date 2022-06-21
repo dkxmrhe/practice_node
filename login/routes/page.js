@@ -10,12 +10,18 @@ router.use((req, res, next) => {
     next();
 });
 
-router.get('/profile', (req, res) => {
-    res.render('profile', {title: '내 정보 - NodeBird'});
+router.get('/', (req, res, next) => {
+    res.render('main');
 });
 
-router.get('/join', (req, res) => {
-    res.render('join', {title: '회원가입 - NodeBird'});
+router.get('/login', (req, res, next) => {
+    res.render('login');
 });
 
+router.get('/join', (req, res, next) => {
+    res.render('join');
+});
+router.get('/prof', (req, res, next) => {
+    res.render('/profile');
+});
 module.exports = router;
